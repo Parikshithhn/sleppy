@@ -1,0 +1,7 @@
+const express=require("express");
+const router=express.Router();
+const page=(title,body)=>`<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>${title}</title><style>body{font-family:Arial;background:#0b0b0b;color:#eee;max-width:850px;margin:40px auto;padding:20px;line-height:1.6}h1{color:#ff334d}</style></head><body><h1>${title}</h1>${body}</body></html>`;
+router.get("/privacy-policy",(req,res)=>res.send(page("Sleppy Esports — Privacy Policy","<p>This service processes WhatsApp contact information, team/player data, attendance, leave and esports match statistics for team-management purposes. Data is used only for operating the service, notifications, administration and record keeping.</p><p>Do not submit passwords, payment card details or unrelated sensitive information.</p><p>For deletion requests, contact the Sleppy Esports administrator.</p>")));
+router.get("/terms",(req,res)=>res.send(page("Sleppy Esports — Terms","<p>This WhatsApp bot is an esports team-management service. Use of the service must comply with WhatsApp, Meta and applicable laws. Administrators control roster and competition records.</p>")));
+router.get("/data-deletion",(req,res)=>res.send(page("Sleppy Esports — Data Deletion","<p>To request deletion of personal data, contact the Sleppy Esports administrator with the WhatsApp number or player record concerned. Records required for team, competition or legal purposes may be retained where permitted.</p>")));
+module.exports=router;
